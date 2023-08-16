@@ -17,6 +17,11 @@
     "registry": "https://registry.npmjs.org/",
     "access": "public"
   },
+  "config": {
+    "commitizen": {
+      "path": "@commitlint/cz-commitlint"
+    }
+  },
   "scripts": {
     "test": "cross-env NODE_ENV=test nyc mocha",
     "lint": "eslint src config test",
@@ -24,15 +29,18 @@
     "build:self": "rollup -c config/rollup.config.js",
     "build:esm": "rollup -c config/rollup.config.esm.js",
     "build:aio": "rollup -c config/rollup.config.aio.js",
-    "build": "npm run build:self && npm run build:esm && npm run build:aio"
+    "build": "npm run build:self && npm run build:esm && npm run build:aio",
+    "cz": "git cz"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
     "@babel/plugin-transform-runtime": "^7.1.0",
     "@babel/preset-env": "^7.1.0",
     "@babel/register": "^7.0.0",
+    "@commitlint/cz-commitlint": "^17.7.1",
     "babel-plugin-istanbul": "^5.1.0",
     "colors": "^1.4.0",
+    "commitizen": "^4.3.0",
     "cross-env": "^5.2.0",
     "eslint": "^8.7.0",
     "expect.js": "^0.3.1",
